@@ -1,7 +1,7 @@
 'use strict';
 
 const hooks = require('./hooks');
-import { apolloExpress, graphiqlExpress } from 'apollo-server';
+import { graphqlExpress, graphiqlExpress } from 'graphql-server-express';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import Resolvers from './resolvers';
 import Schema from './schema';
@@ -14,9 +14,14 @@ module.exports = function () {
     resolvers: Resolvers.call(app)
   });
 
-  app.use('/graphql', apolloExpress((req) => {
+  app.use('/graphql', graphqlExpress((req) => {
+    const { token, provider } = req.feathers;
     return {
-      schema: executableSchema
+      schema: executableSchema,
+      context: {
+        token,
+        provider
+      }
     }
   }))
 
