@@ -5,15 +5,24 @@ Example project using [GraphQL](http://graphql.org/) with [Feathersjs](http://fe
 
 # Install
 
-```git clone https://github.com/benawad/taco-apollo.git``
-`
+```
+git clone https://github.com/benawad/taco-apollo.git
+```
 
-```cd taco-apollo```
+```
+cd taco-apollo
+```
 
-```npm install```
+```
+npm install
+```
 
-```npm start```
+```
+npm start
+```
 
 If you get an error about `babel-node`, then run the following line:
 
-
+```
+npm install --save-dev babel-cli babel-preset-es2015
+```
