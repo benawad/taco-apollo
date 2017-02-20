@@ -14,4 +14,12 @@ Example project using [GraphQL](http://graphql.org/) with [Feathersjs](http://fe
 
 If you get an error about `babel-node`, then run the following line:
 
-`npm install --save-dev babel-cli babel-preset-es2015`
+`npm install -g babel-cli babel-preset-es2015`
+
+# Usage
+
+Start the server
+
+`npm start`
+
+Then you can go to `locahost:3030/graphiql` in your browser to start making queries.
